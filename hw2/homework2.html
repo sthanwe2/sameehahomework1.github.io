@@ -66,7 +66,7 @@ Description: EverCare Medical Patient Registration
                            id="middleinitial"
                            name="middleinitial"
                            title="Enter one letter only, or leave blank."
-                           pattern="[A-Z^a-z ]{0,}"
+                           pattern="[a-zA-Z']{0,1}"
                            placeholder="A"
                         >
                     <label for="lastname">Last Name</label>
@@ -94,6 +94,8 @@ Description: EverCare Medical Patient Registration
                        id="dob"
                        name="dob"
                        required 
+                       title="Enter your date of birth."
+                       onblur="validateDob()"
                        oninvalid="this.setCustomValidity('Date of Birth is Required')"
                        oninput="this.setCustomValidity('')"
                        placeholder="MM/DD/YYYY"
@@ -101,10 +103,12 @@ Description: EverCare Medical Patient Registration
                 <label for="socialsecurity">Social Security Number</label>
                 <input type="password"
                        size="14"
-                       maxlength="11"
+                       maxlength="9"
                        id="social"
                        name="social"
                        required
+                       title="Enter your SSN without special characters"
+                       onblur="validateSsn()"
                        oninvalid="this.setCustomValidity('Social Security is Required')"
                        oninput="this.setCustomValidity('')"
                        placeholder="XXX-XX-XXXX"
@@ -125,6 +129,7 @@ Description: EverCare Medical Patient Registration
                        oninvalid="this.setCustomValidity('At Least 1 Address Line Required')"
                        oninput="this.setCustomValidity('')"
                        placeholder="Street Address, P.O. Box, Company Name"
+                       onblur="validateAddress1()"
                 >   
             </td>
         </tr>          
@@ -137,6 +142,7 @@ Description: EverCare Medical Patient Registration
                        id="addr2"
                        name="addr2"
                        placeholder="Apartment, Suite, Unit, Building, Floor, etc"
+                       onblur="validateAddress2()"
                 >  
             </td>
         </tr>            
@@ -151,9 +157,12 @@ Description: EverCare Medical Patient Registration
                        id="city"
                        name="city"
                        required
+                       title="Zip code must only include numbers and a dash"
+                       pattern="^\d{5}(-\d{4})?$"
                        oninvalid="this.setCustomValidity('City is Required')"
                        oninput="this.setCustomValidity('')"
-                       placeholder="required" 
+                       placeholder="required"
+                       onblur="validateZcode()"
                 >
                 <label for="state">State</label>
                 <select id="state" name="state" required>
@@ -238,6 +247,7 @@ Description: EverCare Medical Patient Registration
                        id="email"
                        name="email"
                        required
+                       title="Enter a valid email."
                        oninvalid="this.setCustomValidity('Valid Email Address Required')"
                        oninput="this.setCustomValidity('')"
                        placeholder="name@domain.tld"
@@ -249,6 +259,8 @@ Description: EverCare Medical Patient Registration
                        maxlength="13"  
                        id="phone"
                        name="phone"
+                       title="Enter your phone number in the format 000-000-0000"
+                       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                        placeholder="(713)555-1212"
                 >
             </td>
@@ -390,7 +402,10 @@ Description: EverCare Medical Patient Registration
 
         <tr class="form">
             <td colspan="3" align="center">
-
+                <input type="button" id="reviewBtn" value="Review">
+             
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             
                 <input type="submit" value="Submit">
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
