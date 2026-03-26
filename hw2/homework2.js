@@ -16,20 +16,20 @@ function reviewInput() {
     let addr1 = document.getElementById("addr1").value;
     let addr2 = document.getElementById("addr2").value;
     let city = document.getElementById("city").value;
-    let state = documnet.getElementById("state").value;
+    let state = document.getElementById("state").value;
     let zip = document.getElementById("zip").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
-    let symptoms = document.getElementById("symptoms");
-    let userid = document.getElementById("userid");
-    let healthscale = document.getElementById("healthscale"):
+    let symptoms = document.getElementById("symptoms").value;
+    let userid = document.getElementById("userid").value;
+    let healthscale = document.getElementById("healthscale").value:
 
     let gender = document.querySelector('input[name="gender"]:checked');
     let vaccinated = document.querySelector('input[name="vaccinated"]:checked');
     let insurance  = document.querySelector('input[name="insurance"]:checked');
     let surgery = document.querySelector('input[name="surgery"]:checked');
 
-    let history = document.querySelector('input[name="history"]:checked');
+    let history = document.querySelectorAll('input[name="history"]:checked');
     let historyList = [];
 
     for (let i = 0; i < history.length; i++) {
@@ -37,7 +37,7 @@ function reviewInput() {
     }
 
     let reviewText = 
-      "Name: " + fname " " + mid " " + lname + "<br>" + 
+      "Name: " + fname + " " + mid " " + lname + "<br>" + 
       "Date of Birth: " + dob + "<br>" +
       "Social Security Number: " + ssn + "<br><br>" +
 
