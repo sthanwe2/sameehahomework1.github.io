@@ -38,6 +38,7 @@ h1
   border: 1px solid #ccc;
 }     
 
-.error {
+span.error 
+{
   color: red !important;
 }
