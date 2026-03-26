@@ -26,7 +26,14 @@ h1
 
 /* adjust logo size*/ 
 #logo 
- {
+{
     width: 350px;     
     height: auto;    
 }
+
+#reviewArea 
+{
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+}     
