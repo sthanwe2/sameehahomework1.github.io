@@ -416,6 +416,7 @@ Description: EverCare Medical Patient Registration
                         oninput="this.setCustomValidity(''); validatePassword()"
                         placeholder="Enter Password"
                         onblur="validatePassword()"
+                        onfocus="validatePassword()"
                 >
                 <span class="error" id="password1-error"></span>
             </td>
@@ -437,6 +438,7 @@ Description: EverCare Medical Patient Registration
                            oninput="this.setCustomValidity(''); confirmPassword()"
                            placeholder="Re-enter Password"
                            onblur="confirmPassword()"
+                           onfocus="confirmPassword()"
                     > 
                     <span class="error" id="password2-error"></span>
             </td>
