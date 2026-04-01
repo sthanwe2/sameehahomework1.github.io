@@ -5,6 +5,32 @@
  Date Updated: 04/17/2026
  Purpose: Redisplay/validate data from a form
 */
+// New to HW 3: validateForm
+function validateForm() {
+ let valid = true;
+
+ if (!validateFname()) valid = false;
+ if (!validateMid()) valid = false;
+ if (!validateLname()) valid = false;
+ if (!validateDob()) valid = false;
+ if (!validateSsn()) valid = false;
+ if (!validateAddr1()) valid = false;
+ if (!validateAddr2()) valid = false;
+ if (!validateCity()) valid = false;
+ if (!validateZip()) valid = false;
+ if (!validateEmail()) valid = false;
+ if (!validatePhone()) valid = false;
+ if (!validateUserid()) valid = false;
+ if (!validatePassword()) valid = false;
+ if (!confirmPassword()) valid = false;
+
+ if (valid) {
+  document.getElementById("submit").disabled = false;
+ } else { 
+  document.getElementById("submit").disabled = true;
+ }
+}
+
 
 // Main section: reviewInput
 function reviewInput() {
