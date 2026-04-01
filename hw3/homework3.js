@@ -188,7 +188,7 @@ function validateDob() {
 
 function validateSsn() {
     let ssn = document.getElementById("ssn");
-    let pattern = /^(\d{9}|\d{3}-\d{2}-\d{4})$/;
+    let pattern = /^\d{3}-\d{2}-\d{4}$/;
 
     if (!pattern.test(ssn.value)) {
       document.getElementById("ssn-error").innerHTML = 
@@ -199,6 +199,22 @@ function validateSsn() {
       return true;
     }
 }
+
+function formatSsn() {
+ let ssnField = document.getElementById("ssn");
+ let ssn = ssnField.value.replace(/\D/g, ""); // this will hopefully remove numbers 
+
+ if (ssn.length > 9) {
+  ssn = ssn.slice(0,9);
+ }
+
+ if (ssn.length > 5) {
+  ssn = ssn.slice(0,3) + "-" + ssn.slice(3,5) + "-" + ssn.slice(5);
+ } else if (ssn.length > 3) {
+  ssn = snn.slice(0,3) + "-" + ssn.slice(3);
+ }
+ ssnField.value = ssn; 
+  
 
 function validateUserid() {
     let userid = document.getElementById("userid");
