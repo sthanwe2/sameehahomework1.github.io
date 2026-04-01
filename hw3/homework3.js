@@ -202,11 +202,11 @@ function validateSsn() {
 
 function validateUserid() {
     let userid = document.getElementById("userid");
-    let pattern = /^[A-Za-z][A-Za-z0-9_-]{4,29}$/;
+    let pattern = /^[A-Za-z][A-Za-z0-9_-]{4,19}$/;
 
     if (!pattern.test(userid.value)) {
       document.getElementById("userid-error").innerHTML = 
-        "User ID must start with a letter and be 5-30 characters. Letters, numbers, _ and - only.";
+        "User ID must start with a letter and be 5-20 characters. Letters, numbers, _ and - only.";
       return false;
     } else {
       document.getElementById("userid-error").innerHTML = "";
