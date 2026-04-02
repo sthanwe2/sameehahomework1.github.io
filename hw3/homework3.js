@@ -211,9 +211,10 @@ function formatSsn() {
  if (ssn.length > 5) {
   ssn = ssn.slice(0,3) + "-" + ssn.slice(3,5) + "-" + ssn.slice(5);
  } else if (ssn.length > 3) {
-  ssn = snn.slice(0,3) + "-" + ssn.slice(3);
+  ssn = ssn.slice(0,3) + "-" + ssn.slice(3);
  }
  ssnField.value = ssn; 
+}
 
  function showSsn() {
     document.getElementById("ssn").type = "text";
