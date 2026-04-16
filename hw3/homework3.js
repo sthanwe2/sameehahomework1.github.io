@@ -375,3 +375,22 @@ function validatePhone() {
       return true;
     }
 }
+
+function formatPhone() {
+   let phoneField = document.getElementById("phone");
+   let phone = phoneField.value.replace(/\D/g, "");
+
+   if (phone.length > 10) {
+    phone = phone.slice(0, 10);
+   }
+
+  if (phone.length > 6){
+   phone = phone.slice(0,3) + "-" + phone.slice(3,6) + "-" + phone.slice(6);
+  } else if (phone.length > 3) {
+   phone = phone.slice(0,3) + "-" + phone.slice(3);
+  }
+
+  phoneField.value = phone;
+}
+
+   
