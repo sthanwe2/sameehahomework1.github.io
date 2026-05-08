@@ -274,11 +274,11 @@ Description: EverCare Medical Patient Registration
             <td align="left">
                 <label>Check all that apply:</label>
 
-                <label><input type="checkbox" name="history" value="asthma"> Asthma</label>
-                <label><input type="checkbox" name="history" value="diabetes"> Diabetes</label>
-                <label><input type="checkbox" name="history" value="hypertension"> Hypertension</label>
-                <label><input type="checkbox" name="history" value="covid19"> Covid 19</label>
-                <label><input type="checkbox" name="history" value="allergies"> Allergies</label>
+                <label><input type="checkbox" name="history" value="asthma" onchange="updateProgressBar()"> Asthma</label>
+                <label><input type="checkbox" name="history" value="diabetes" onchange="updateProgressBar()"> Diabetes</label>
+                <label><input type="checkbox" name="history" value="hypertension" onchange="updateProgressBar()"> Hypertension</label>
+                <label><input type="checkbox" name="history" value="covid19" onchange="updateProgressBar()"> Covid 19</label>
+                <label><input type="checkbox" name="history" value="allergies" onchange="updateProgressBar()"> Allergies</label>
             </td>
         </tr>
 
@@ -287,33 +287,33 @@ Description: EverCare Medical Patient Registration
         <tr class="form">
             <td align="left">
                 <label>Gender:</label>
-                <label><input type="radio" name="gender" value="M" required>Male</label>
-                <label><input type="radio" name="gender" value="F">Female</label>
-                <label><input type="radio" name="gender" value="O">Other</label>
+                <label><input type="radio" name="gender" value="M" onchange="updateProgressBar()" required>Male</label>
+                <label><input type="radio" name="gender" value="F" onchange="updateProgressBar()">Female</label>
+                <label><input type="radio" name="gender" value="O" onchange="updateProgressBar()">Other</label>
             </td>
         </tr>
 
         <tr class="form">
             <td align="left">
                 <label>Vaccinated?</label>
-                <label><input type="radio" name="vaccinated" value="Y" required>Yes</label>
-                <label><input type="radio" name="vaccinated" value="N">No</label>
+                <label><input type="radio" name="vaccinated" value="Y" onchange="updateProgressBar()" required>Yes</label>
+                <label><input type="radio" name="vaccinated" value="N" onchange="updateProgressBar()">No</label>
             </td>
         </tr>
 
         <tr class="form">
             <td align="left">
                 <label>Do you have insurance?</label>
-                <label><input type="radio" name="insurance" value="Y" required>Yes</label>
-                <label><input type="radio" name="insurance" value="N">No</label>
+                <label><input type="radio" name="insurance" value="Y" onchange="updateProgressBar()" required>Yes</label>
+                <label><input type="radio" name="insurance" value="N" onchange="updateProgressBar()">No</label>
             </td>
         </tr>
 
         <tr class="form">
             <td align="left">
                 <label>Have you had surgery in the past 6 months?</label>
-                <label><input type="radio" name="surgery" value="Y" required>Yes</label>
-                <label><input type="radio" name="surgery" value="N">No</label>
+                <label><input type="radio" name="surgery" value="Y" onchange="updateProgressBar()" required>Yes</label>
+                <label><input type="radio" name="surgery" value="N" onchange="updateProgressBar()">No</label>
             </td>
         </tr>
 
