@@ -5,6 +5,10 @@
  Date Updated: 04/08/2026
  Purpose: Redisplay/validate data from a form
 */
+
+// This is for the confetti at the end of form completion (only allows confetti to appear once
+let confettiPlayed = false; 
+
 // New to HW 3: validateForm
 function validateForm() {
  let valid = true;
@@ -620,4 +624,19 @@ function updateProgressBar() {
 
     document.getElementById("progressBar").innerHTML =
         Math.round(percent) + "%";
+
+
+if (percent == 100 && confettiPlayed == false) {
+
+    confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
+    });
+
+    confettiPlayed = true;
+}
+
+if (percent < 100) {
+    confettiPlayed = false;
 }   
