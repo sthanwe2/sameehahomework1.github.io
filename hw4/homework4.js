@@ -606,6 +606,12 @@ function updateProgressBar() {
     if (document.getElementById("password").value != "")
         completedFields++;
 
+    if (document.querySelector('input[name="history"]:checked')) completedFields++;
+    if (document.querySelector('input[name="gender"]:checked')) completedFields++;
+    if (document.querySelector('input[name="vaccinated"]:checked')) completedFields++;
+    if (document.querySelector('input[name="insurance"]:checked')) completedFields++;
+    if (document.querySelector('input[name="surgery"]:checked')) completedFields++;
+ 
     let percent =
         (completedFields / totalFields) * 100;
 
