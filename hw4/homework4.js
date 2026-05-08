@@ -568,4 +568,47 @@ function loadUserData() {
 
 // Javascript to create a progress bar
 
-   
+function updateProgressBar() {
+
+    let totalFields = 10;
+    let completedFields = 0;
+
+    if (document.getElementById("firstname").value != "")
+        completedFields++;
+
+    if (document.getElementById("lastname").value != "")
+        completedFields++;
+
+    if (document.getElementById("dob").value != "")
+        completedFields++;
+
+    if (document.getElementById("ssn").value != "")
+        completedFields++;
+
+    if (document.getElementById("email").value != "")
+        completedFields++;
+
+    if (document.getElementById("phone").value != "")
+        completedFields++;
+
+    if (document.getElementById("city").value != "")
+        completedFields++;
+
+    if (document.getElementById("zip").value != "")
+        completedFields++;
+
+    if (document.getElementById("userid").value != "")
+        completedFields++;
+
+    if (document.getElementById("password").value != "")
+        completedFields++;
+
+    let percent =
+        (completedFields / totalFields) * 100;
+
+    document.getElementById("progressBar").style.width =
+        percent + "%";
+
+    document.getElementById("progressBar").innerHTML =
+        Math.round(percent) + "%";
+}   
